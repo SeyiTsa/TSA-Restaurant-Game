@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func get_speed() -> int:
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_pressed("sprint"):
 		return sprint_speed
 	return speed
 	
