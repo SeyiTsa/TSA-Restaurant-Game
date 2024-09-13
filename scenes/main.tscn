@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://by2w026v1l3q"]
 
 [ext_resource type="PackedScene" uid="uid://cd8vbm5in07ms" path="res://scenes/player.tscn" id="1_yvnu5"]
-[ext_resource type="Texture2D" uid="uid://dybl51c4kss4l" path="res://icon.svg" id="2_bl4pl"]
+[ext_resource type="PackedScene" uid="uid://cm34nodey2fao" path="res://scenes/table.tscn" id="2_n4xf2"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 scale = Vector2(4, 4)
 
 [node name="Player" parent="." instance=ExtResource("1_yvnu5")]
 position = Vector2(175, 118)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(104.75, 70.75)
-texture = ExtResource("2_bl4pl")
+[node name="Table" parent="." instance=ExtResource("2_n4xf2")]
+position = Vector2(120.75, 95.5)
