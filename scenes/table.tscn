@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cm34nodey2fao"]
 
-[ext_resource type="Texture2D" uid="uid://dybl51c4kss4l" path="res://icon.svg" id="1_tja0m"]
+[ext_resource type="Texture2D" uid="uid://knlnr34kjnko" path="res://art/wooden_table.png" id="1_0oih1"]
 [ext_resource type="PackedScene" uid="uid://1731x5423axy" path="res://scenes/chair.tscn" id="2_wy677"]
 [ext_resource type="PackedScene" uid="uid://be647421rchf7" path="res://scenes/interact_area.tscn" id="4_m6wkc"]
 
@@ -12,23 +12,23 @@ size = Vector2(36, 36)
 
 [node name="Table" type="CharacterBody2D"]
 z_index = 1
-y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-13.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_tja0m")
-offset = Vector2(0, -64)
+texture_filter = 1
+texture = ExtResource("1_0oih1")
+offset = Vector2(0, -18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_4evdq")
 
 [node name="Chair" parent="." instance=ExtResource("2_wy677")]
-position = Vector2(-25, -5)
+position = Vector2(-33, -6)
 
 [node name="Chair2" parent="." instance=ExtResource("2_wy677")]
-position = Vector2(25, -5)
+position = Vector2(33, -6)
+scale = Vector2(-1, 1)
 
 [node name="Interact Area" parent="." instance=ExtResource("4_m6wkc")]
 
