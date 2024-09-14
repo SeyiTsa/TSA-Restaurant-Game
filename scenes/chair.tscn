@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://1731x5423axy"]
+
+[ext_resource type="Texture2D" uid="uid://dybl51c4kss4l" path="res://icon.svg" id="1_ni83g"]
+[ext_resource type="Script" path="res://scripts/chair.gd" id="1_vxn41"]
+[ext_resource type="PackedScene" uid="uid://be647421rchf7" path="res://scenes/interact_area.tscn" id="3_g7cyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiwcw"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hynkv"]
+size = Vector2(22, 22)
+
+[node name="Chair" type="CharacterBody2D"]
+position = Vector2(-25, -3)
+script = ExtResource("1_vxn41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_ni83g")
+offset = Vector2(0, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_uiwcw")
+
+[node name="Interact Area" parent="." instance=ExtResource("3_g7cyw")]
+
+[node name="CollisionShape2D" parent="Interact Area" index="0"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_hynkv")
+
+[node name="Customer Marker" type="Marker2D" parent="."]
+position = Vector2(0, -5)
+
+[editable path="Interact Area"]

@@ -1,15 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm34nodey2fao"]
+[gd_scene load_steps=6 format=3 uid="uid://cm34nodey2fao"]
 
 [ext_resource type="Texture2D" uid="uid://dybl51c4kss4l" path="res://icon.svg" id="1_tja0m"]
+[ext_resource type="PackedScene" uid="uid://1731x5423axy" path="res://scenes/chair.tscn" id="2_wy677"]
+[ext_resource type="PackedScene" uid="uid://be647421rchf7" path="res://scenes/interact_area.tscn" id="4_m6wkc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4evdq"]
 size = Vector2(26, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiwcw"]
-size = Vector2(16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72tpg"]
+size = Vector2(36, 36)
 
-[node name="Table" type="StaticBody2D"]
+[node name="Table" type="CharacterBody2D"]
 z_index = 1
+y_sort_enabled = true
+metadata/_edit_horizontal_guides_ = [-13.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
@@ -20,26 +24,16 @@ offset = Vector2(0, -64)
 position = Vector2(0, -13)
 shape = SubResource("RectangleShape2D_4evdq")
 
-[node name="Chair" type="StaticBody2D" parent="."]
-position = Vector2(-25, -3)
+[node name="Chair" parent="." instance=ExtResource("2_wy677")]
+position = Vector2(-25, -5)
 
-[node name="Sprite2D" type="Sprite2D" parent="Chair"]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("1_tja0m")
-offset = Vector2(0, -64)
+[node name="Chair2" parent="." instance=ExtResource("2_wy677")]
+position = Vector2(25, -5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair"]
-position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_uiwcw")
+[node name="Interact Area" parent="." instance=ExtResource("4_m6wkc")]
 
-[node name="Chair2" type="StaticBody2D" parent="."]
-position = Vector2(25, -3)
+[node name="CollisionShape2D" parent="Interact Area" index="0"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_72tpg")
 
-[node name="Sprite2D" type="Sprite2D" parent="Chair2"]
-scale = Vector2(0.125, 0.125)
-texture = ExtResource("1_tja0m")
-offset = Vector2(0, -64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair2"]
-position = Vector2(0, -8)
-shape = SubResource("RectangleShape2D_uiwcw")
+[editable path="Interact Area"]
