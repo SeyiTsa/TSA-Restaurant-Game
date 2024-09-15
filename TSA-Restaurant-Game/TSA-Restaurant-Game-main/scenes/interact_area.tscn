@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://be647421rchf7"]
+
+[node name="Interact Area" type="Area2D" groups=["interact Area"]]
+position = Vector2(0, -6)
+collision_layer = 2
+collision_mask = 2

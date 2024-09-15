@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://1731x5423axy"]
+
+[ext_resource type="Script" path="res://scripts/chair.gd" id="1_vxn41"]
+[ext_resource type="Texture2D" uid="uid://bn2m61e0aacrh" path="res://art/wooden_chair.png" id="2_h3vcq"]
+[ext_resource type="PackedScene" uid="uid://be647421rchf7" path="res://scenes/interact_area.tscn" id="3_g7cyw"]
+<<<<<<< HEAD
+[ext_resource type="Texture2D" path="res://art/shadow.png" id="4_6wbc4"]
+=======
+[ext_resource type="Texture2D" uid="uid://bivnmrst6pgra" path="res://art/shadow.png" id="4_6wbc4"]
+>>>>>>> f9b9bef768b6e6efd103984923431c54e35f78b7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uiwcw"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ny2cd"]
+radius = 19.105
+
+[node name="Chair" type="CharacterBody2D"]
+position = Vector2(-25, -3)
+collision_layer = 5
+script = ExtResource("1_vxn41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_h3vcq")
+offset = Vector2(0, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_uiwcw")
+
+[node name="Interact Area" parent="." instance=ExtResource("3_g7cyw")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact Area"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_ny2cd")
+
+[node name="Customer Marker" type="Marker2D" parent="."]
+z_index = 1
+position = Vector2(0, -1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 3)
+texture = ExtResource("4_6wbc4")
+offset = Vector2(0, -18)
+
+[editable path="Interact Area"]
