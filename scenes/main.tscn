@@ -14,23 +14,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(666, -36.5, -10, -10, -
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q065k"]
 texture = ExtResource("4_msgmk")
 
-[sub_resource type="Animation" id="Animation_c1abs"]
-resource_name = "pop up"
-length = 0.3
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1.56, -1.56),
-"update": 0,
-"values": [Vector2(826, 525), Vector2(826, 398)]
-}
-
 [sub_resource type="Animation" id="Animation_y7psn"]
 length = 0.001
 tracks/0/type = "value"
@@ -63,6 +46,23 @@ tracks/0/keys = {
 "values": [Vector2(826, 398), Vector2(826, 525)]
 }
 
+[sub_resource type="Animation" id="Animation_c1abs"]
+resource_name = "pop up"
+length = 0.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1.56, -1.56),
+"update": 0,
+"values": [Vector2(826, 525), Vector2(826, 398)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yfagk"]
 _data = {
 "RESET": SubResource("Animation_y7psn"),
@@ -78,10 +78,10 @@ scale = Vector2(2, 2)
 position = Vector2(175, 118)
 
 [node name="Table" parent="." instance=ExtResource("2_n4xf2")]
-position = Vector2(149, 101.333)
+position = Vector2(262, 148.5)
 
 [node name="Table4" parent="." instance=ExtResource("2_n4xf2")]
-position = Vector2(295.333, 189.667)
+position = Vector2(327, 213)
 
 [node name="Table5" parent="." instance=ExtResource("2_n4xf2")]
 position = Vector2(149.333, 187)
@@ -94,7 +94,7 @@ navigation_polygon = SubResource("NavigationPolygon_3spg2")
 metadata/_edit_lock_ = true
 
 [node name="Customer2" parent="." instance=ExtResource("3_2wf3l")]
-position = Vector2(139, 88)
+position = Vector2(244.5, 135.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -108,9 +108,9 @@ offset_bottom = 40.0
 texture_filter = 1
 layout_mode = 0
 offset_left = 826.0
-offset_top = 400.0
+offset_top = 525.0
 offset_right = 1076.0
-offset_bottom = 650.0
+offset_bottom = 775.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_q065k")
 script = ExtResource("5_2a2ov")
 
@@ -182,10 +182,7 @@ position = Vector2(219.059, 63.3769)
 position = Vector2(150.229, 20.5269)
 
 [node name="Table2" parent="." instance=ExtResource("2_n4xf2")]
-position = Vector2(286.667, 107)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(192, 108)
+position = Vector2(390, 147.5)
 
 [connection signal="mouse_entered" from="CanvasLayer/Control/Notepad" to="CanvasLayer/Control/Notepad" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/Notepad" to="CanvasLayer/Control/Notepad" method="_on_mouse_exited"]

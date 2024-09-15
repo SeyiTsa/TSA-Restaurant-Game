@@ -3,15 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://knlnr34kjnko" path="res://art/wooden_table.png" id="1_0oih1"]
 [ext_resource type="PackedScene" uid="uid://1731x5423axy" path="res://scenes/chair.tscn" id="2_wy677"]
 [ext_resource type="PackedScene" uid="uid://be647421rchf7" path="res://scenes/interact_area.tscn" id="4_m6wkc"]
+[ext_resource type="Texture2D" uid="uid://bivnmrst6pgra" path="res://art/shadow.png" id="4_uuy0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4evdq"]
 size = Vector2(26, 26)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_72tpg"]
-size = Vector2(36, 36)
-
 [node name="Table" type="CharacterBody2D"]
 z_index = 1
+collision_layer = 5
 metadata/_edit_horizontal_guides_ = [-13.0]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -32,8 +31,12 @@ scale = Vector2(-1, 1)
 
 [node name="Interact Area" parent="." instance=ExtResource("4_m6wkc")]
 
-[node name="CollisionShape2D" parent="Interact Area" index="0"]
-position = Vector2(0, -7)
-shape = SubResource("RectangleShape2D_72tpg")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -1)
+texture = ExtResource("4_uuy0i")
+offset = Vector2(0, -18)
 
 [editable path="Interact Area"]
