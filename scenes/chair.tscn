@@ -3,7 +3,11 @@
 [ext_resource type="Script" path="res://scripts/chair.gd" id="1_vxn41"]
 [ext_resource type="Texture2D" uid="uid://bn2m61e0aacrh" path="res://art/wooden_chair.png" id="2_h3vcq"]
 [ext_resource type="PackedScene" uid="uid://be647421rchf7" path="res://scenes/interact_area.tscn" id="3_g7cyw"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" path="res://art/shadow.png" id="4_6wbc4"]
+=======
+[ext_resource type="Texture2D" uid="uid://bivnmrst6pgra" path="res://art/shadow.png" id="4_6wbc4"]
+>>>>>>> f9b9bef768b6e6efd103984923431c54e35f78b7
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uiwcw"]
 size = Vector2(16, 16)
